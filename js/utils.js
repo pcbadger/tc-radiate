@@ -5,7 +5,8 @@ var utils = {
 
     //Used to append a timestamp to the url so the result isn't cached
     getTsQSParam : function() {
-        return "&ts=" + new Date().toTimeString();
+        return '';
+        // return "?&ts=" + new Date().toTimeString();
     }
 };
 
