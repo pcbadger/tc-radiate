@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
     //bind the knockoutjs model to the html
-    var viewModel = new BuildScreenViewModel();
+    var viewModel = new buildScreenViewModel();
     ko.applyBindings(viewModel);
 
     //hook up error handling here to avoid the DOM dependency on the view model

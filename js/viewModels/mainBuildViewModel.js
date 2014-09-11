@@ -1,4 +1,4 @@
-﻿var MainBuildViewModel = BaseBuild.extend({
+﻿var mainBuildViewModel = baseBuild.extend({
     init: function (data) {
         this._super(data);
         var self = this;

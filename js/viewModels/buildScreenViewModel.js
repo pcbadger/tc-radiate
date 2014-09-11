@@ -1,4 +1,4 @@
-﻿var BuildScreenViewModel = function () {
+﻿var buildScreenViewModel = function () {
     var self = this;
 
     self.isFirstLoad  = ko.observable(true);
@@ -6,7 +6,7 @@
     self.buildTypes   = ko.observableArray();
     self.errorMessage = ko.observable();
     self.isLoading    = ko.observable(true);
-    self.randomClass  = ko.observable(Utils.getRandomClass());
+    self.randomClass  = ko.observable(utils.getRandomClass());
     self.mainBuild    = ko.observable();
 
     self.hasError = ko.computed(function () {
@@ -21,15 +21,15 @@
         self.loadMainBuildStatus();
 
         //Load a new build image every so often just for fun
-        setInterval(function () { self.randomClass(Utils.getRandomClass()); }, Settings.buildImageIntervalMs);
+        setInterval(function () { self.randomClass(utils.getRandomClass()); }, Settings.buildImageIntervalMs);
 
     };
 
     self.loadAllBuilds = function () {
         self.isLoading(true);
-        $.getJSON(Settings.buildsUrl + Utils.getTsQSParam(), function (data) {
+        $.getJSON(Settings.buildsUrl + utils.getTsQSParam(), function (data) {
             self.builds(ko.utils.arrayMap(data.build, function (build) {
-                return new SingleBuildViewModel(build, self.buildTypes());
+                return new singleBuildViewModel(build, self.buildTypes());
             }));
 
             if (self.builds().length == 0)
@@ -57,7 +57,7 @@
 
     self.loadMainBuildStatus = function () {
         self.isLoading(true);
-        $.getJSON(Settings.buildStatusUrl + Utils.getTsQSParam(), function (data) {
+        $.getJSON(Settings.buildStatusUrl + utils.getTsQSParam(), function (data) {
             self.mainBuild(ko.mapping.fromJS(data, {
                 create: function(options) {
                     return new MainBuildViewModel(options.data, self.buildTypes());

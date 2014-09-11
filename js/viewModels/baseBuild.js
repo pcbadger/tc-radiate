@@ -1,4 +1,4 @@
-﻿var BaseBuild = Class.extend({
+﻿var baseBuild = Class.extend({
     init: function(data) {
         var self = this;
         if (data == null)
