@@ -6,7 +6,6 @@
     self.buildTypes   = ko.observableArray();
     self.errorMessage = ko.observable();
     self.isLoading    = ko.observable(true);
-    self.randomClass  = ko.observable(utils.getRandomClass());
     self.mainBuild    = ko.observable();
 
     self.hasError = ko.computed(function () {
@@ -18,10 +17,6 @@
     self.init = function () {
         self.isLoading(true);
         self.loadBuildTypes();
-
-        //Load a new build image every so often just for fun
-        setInterval(function () { self.randomClass(utils.getRandomClass()); }, Settings.buildImageIntervalMs);
-
     };
 
     self.loadAllBuilds = function () {

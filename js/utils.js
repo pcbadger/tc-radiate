@@ -3,11 +3,6 @@
 //----------------------
 var utils = {
 
-    //Returns one of 11 random images for the buid success or fail image
-    getRandomClass : function() {
-        return 'c' + Math.floor(Math.random() * 11);
-    },
-
     //Used to append a timestamp to the url so the result isn't cached
     getTsQSParam : function() {
         return "&ts=" + new Date().toTimeString();
