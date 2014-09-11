@@ -11,6 +11,7 @@
 	    <div id="main-panel">
 	        <ul data-bind="foreach: { data: builds }">
 	            <li data-bind="attr: { class: lowerStatus() }, css: { running: isRunning() }">
+                    <div class="url"  data-bind="text: webUrl()"></div>
 	                <div class="build-branch"  data-bind="text: description()"></div>
 	                <div class="build-type" data-bind="text: buildType"></div>
 	                <div class="clear"></div>

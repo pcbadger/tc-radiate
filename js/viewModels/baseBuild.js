@@ -40,5 +40,12 @@
 
             return description;
         }, self);
+
+        self.webUrl = ko.computed(function() {
+            if (this.webUrl)
+                return true;
+            else
+                return this.webUrl;
+        }, self);
     }
 });
