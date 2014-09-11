@@ -18,7 +18,6 @@
     self.init = function () {
         self.isLoading(true);
         self.loadBuildTypes();
-        self.loadMainBuildStatus();
 
         //Load a new build image every so often just for fun
         setInterval(function () { self.randomClass(utils.getRandomClass()); }, Settings.buildImageIntervalMs);
@@ -38,7 +37,6 @@
                 self.errorMessage('');
         }).always(function () {
             self.isLoading(false);
-            self.loadMainBuildStatus();
             if (Settings.enableAutoUpdate)
                 setTimeout(self.loadAllBuilds, Settings.checkIntervalMs);
             if (self.isFirstLoad())
@@ -51,19 +49,6 @@
         $.getJSON(Settings.buildTypesUrl, function (data) {
             self.buildTypes(data.buildType);
             self.loadAllBuilds();
-            self.isLoading(false);
-        });
-    };
-
-    self.loadMainBuildStatus = function () {
-        self.isLoading(true);
-        $.getJSON(Settings.buildStatusUrl + utils.getTsQSParam(), function (data) {
-            self.mainBuild(ko.mapping.fromJS(data, {
-                create: function(options) {
-                    return new MainBuildViewModel(options.data, self.buildTypes());
-                }
-            }));
-        }).always(function (){
             self.isLoading(false);
         });
     };
