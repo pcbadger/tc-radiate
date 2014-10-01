@@ -57,6 +57,7 @@ ul li {
 
 .failure {
     background-color: Red!important;
+    font-size: 150%;
 }
 
 .running {

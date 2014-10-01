@@ -11,6 +11,23 @@ var utils = {
 };
 
 //----------------------
+// AUTO SCROLL
+//----------------------
+
+
+function scroll(speed) {
+    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
+        $(this).animate({ scrollTop: 0 }, speed);
+    });
+}
+
+// Set scrolling speed, the higher the number, the slower the scroll
+speed = 100000;
+
+scroll(speed)
+setInterval(function(){scroll(speed)}, speed );
+
+//----------------------
 // KNOCKOUTJS EXTENSIONS
 //----------------------
 

@@ -15,8 +15,6 @@
 	                <div class="build-branch"  data-bind="text: description()"></div>
 	                <div class="build-type" data-bind="text: buildType"></div>
 	                <div class="clear"></div>
-	                <div class="build-status" data-bind="text: isRunning() ? '' : status"></div>
-	                <div class="clear"></div>
 	                <!-- ko if: hasProgress() -->
                        <div class="progress-container" data-bind="attr: { 'data-progress' : percentageComplete() }"></div>
                     <!-- /ko -->
