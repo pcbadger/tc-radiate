@@ -1,6 +1,6 @@
 ﻿body {
     margin: 0;
-    background-color: #000;
+    background-color: #FFF;
     color: #DEDEDE;
     font-family: Calibri, Tahoma;
 }
@@ -40,7 +40,14 @@ ul li {
     position:absolute;
     bottom: 0;
     right: 0;
-    background-color: #FFF;
+    background: #ff1a00; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #ff1a00 71%, #ff7700 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(71%,#ff1a00), color-stop(100%,#ff7700)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #ff1a00 71%,#ff7700 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #ff1a00 71%,#ff7700 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #ff1a00 71%,#ff7700 100%); /* IE10+ */
+    background: linear-gradient(135deg, #ff1a00 71%,#ff7700 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff7700',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ 
     color: #000;
     width: 100%;
 	height: 100%;
@@ -52,7 +59,14 @@ ul li {
     }
 
 .success {
-    background-color: #006400!important;
+    background: #63c3ff; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #63c3ff 53%, #f0f9ff 98%, #f0f9ff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(53%,#63c3ff), color-stop(98%,#f0f9ff), color-stop(100%,#f0f9ff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #63c3ff 53%,#f0f9ff 98%,#f0f9ff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #63c3ff 53%,#f0f9ff 98%,#f0f9ff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #63c3ff 53%,#f0f9ff 98%,#f0f9ff 100%); /* IE10+ */
+    background: linear-gradient(135deg, #63c3ff 53%,#f0f9ff 98%,#f0f9ff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63c3ff', endColorstr='#f0f9ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .failure {

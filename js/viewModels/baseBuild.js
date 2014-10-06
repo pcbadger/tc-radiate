@@ -43,8 +43,8 @@
 
         self.webUrl = ko.computed(function() {
             if (this.webUrl)
-                return this.webUrl;
-            else
+            return this.webUrl().replace(/^(.*?)\TypeId=|[_]/g, ' - ').replace(/([a-z])([A-Z])/g, '$1 $2');
+             else
                 return 'No Url Found';
         }, self);
     }
